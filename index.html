@@ -1,1 +1,52 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>D3 Page Template</title>
+<script type="text/javascript" src="d3/d3.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+//var dataset; //Global variable
+var dataset = [ 5, 10, 15, 20, 25 ];
+//d3.csv("food.csv", function(data) {
+//dataset = data;
+//Once loaded, copy to dataset.
+//generateVis();
+//Then call other functions that
+//hideLoadingMsg(); //depend on data being present.
+//});
+d3.select("body").selectAll("p")
+.data(dataset)
+.enter()
+
+.append("p")
+//
+
+//.text("New paragraph!");
+//.text(function(d) { return d; });
+.text(function(d) {
+return "I can count up to " + d;
+
+})
+.style("color", function(d) {
+if (d > 15) {
+//Threshold of 15
+return "red";
+} else {
+return "black";
+}
+});
+//.style("color", function(d) {
+//if (d > 15) {
+//Threshold of 15
+//return "red";
+//} else {
+//return "black";
+//}
+//});
+//d3.select("body").append("p").text("New paragraph!");
+</script>
+
+</body>
+</html>
